@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="col-3" style="float: left;border: 1px solid gray;padding-right: 2px;">
+        <h4>Add member form</h4>
+            <div class="form-group">
+                <label for="email">Member Name:</label>
+                <input type="text" class="form-control" [(ngModel)]="memberName" placeholder="Enter member name" id="email">
+            </div>
+        
+            <div class="form-group">
+                <label for="pwd">Member Mobile:</label>
+                <input type="text" class="form-control" [(ngModel)]="memberMobile" placeholder="Enter mobile number" id="pwd">
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-success" (click)="submit()">Submit</button>
+                <button type="button" class="btn btn-success" (click)="submitEdit()">Edit Submit</button>
+                <button type="submit" class="btn btn-light" (click)="clear()">Reset</button>
+
+            </div>
+            </div>
+
+    <div class="col-9" style="float: left;">
+
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Member Name</th>
+                <th>Member Mobile</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let member of memberlist;let i=index">
+                 
+                <td> {{member.memberName}}</td>
+                <td>{{member.memberMobile}}</td>
+                <td>
+                    <button type="button" class="btn btn-warning" (click)="editMember(i,member)">Edit</button>
+                    <button type="button" class="btn btn-danger"  (click)="deleteMember(i)">Delete</button>
+                </td>
+              </tr>
+
+              <div *ngIf="memberlist.length==0">
+                No Data found
+              </div>
+          
+            </tbody>
+          </table>
+</div>
+</div>
+
+<!-- shubham -->
+
