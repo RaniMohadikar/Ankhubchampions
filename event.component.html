@@ -1,0 +1,32 @@
+
+      <form>
+        <div class="form-group">
+          <label for="event"><h3>Events</h3></label>
+          <input type="text" class="form-control" [(ngModel)]="eventData" placeholder="Enter event" name="event">
+        </div>
+    
+        <div class="form-group">
+          <label for="date"><h3>Date</h3></label>
+          <input type="date" class="form-control" [(ngModel)]="dateData" placeholder="selectdate" name="date">
+        </div>
+
+        <button type="submit" class="btn btn-primary" (click)="submitForm()" >Submit</button>
+        <button type="button" class="btn btn-primary" (click)="clearForm()" >Clear</button>
+      </form>
+
+
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Event Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of eventList">
+            <td> {{item.eventName}} </td>
+            <td> {{item.eventDate}} </td>         
+          </tr>
+        </tbody>
+      </table>

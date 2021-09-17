@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <h1 class="text-center">{{title}}</h1>
+    <hr>
+    <br>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>EMPLOYEES NAME</th>
+          <th>PROJECTS</th>
+          <th>WORK ASSING</th>
+          <th>CURRENTLY WORKING</th>
+          <th>DAILY STANDUP MEETING</th>
+          <th>TIME</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data">
+          <td>{{item.name}}</td>
+          <td>{{item.projects}} </td>
+          <td>{{item.workassing}}</td>
+          <td>{{item.currentlyworking}}</td>
+          <td>{{item.meeting}}</td>
+          <td>{{item.hours}}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
